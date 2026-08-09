@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-# Displays username, user ID, and home directory
+#Displaying words between numbers
 
-while IFS=: read -r username password uid gid comment home shell
-do
-    echo "${username}:${uid}:${home}"
-done < /etc/passwd
+for (( i=1; i<=100; i++ )); do
+    if (( i%3 == 0 && i%5 == 0 )); then
+        echo "FizzBuzz"
+    elif (( i%3 == 0 )); then
+        echo "Fizz"
+    elif (( i%5 ==0 )); then
+        echo "Buzz"
+    else
+        echo "$i"
+    fi
+done
