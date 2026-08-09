@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#showing your bash pid
 ps axu --forest | grep bash
 
 # shellcheck disable=SC2009
