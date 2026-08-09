@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Displays username, user ID, and home directory from /etc/passwd
-while IFS=: read -r username _ user_id _ _ home _
+while IFS= read -r line
 do
-    echo "$username:$user_id:$home"
+    echo "$line" | cut -d: -f1,3,6
 done < /etc/passwd
